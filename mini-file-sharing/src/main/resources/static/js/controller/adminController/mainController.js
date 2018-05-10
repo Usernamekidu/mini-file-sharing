@@ -74,8 +74,6 @@ app.controller("mainController", function($scope, $http, userDataOp, $routeParam
 				for(var i=0; i < data.length;i++){
 						$scope.rank.names.push({id: parseInt(i), name: data[i].name});
 				}
-
-				
 			})
 			.error(function(data, status, headers, config){});
 		}).error(function(data, status, headers, config) {
