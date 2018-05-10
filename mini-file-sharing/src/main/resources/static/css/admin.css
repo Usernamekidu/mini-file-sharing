@@ -1,0 +1,116 @@
+.body {
+	
+}
+
+.user-header {
+	margin: 40px auto 5px auto;
+	color: white;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	border-radius: 50%;
+	border: 1px solid white;
+}
+
+.info {
+	text-align: center;
+	padding: 5px;
+	color: yellow;
+	margin-bottom: 40px;
+}
+
+.profile {
+	color: lightgreen;
+}
+
+.profile:hover {
+	color: green;
+	cursor: pointer;
+}
+
+.setting {
+	color: lightgreen;
+	padding-left: 8px;
+}
+
+.setting:hover {
+	color: green;
+	cursor: pointer;
+}
+
+.nav-ul {
+	float: left;
+	width: 220px;
+	background: #363942;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	position: fixed;
+}
+
+.li {
+	background-color: transparent;
+	color: #ffffff;
+	margin: auto;
+	padding: 5px 0 5px 15px;
+	border: 0;
+	border-radius: 0px;
+	width: 100%;
+	text-align: left;
+	box-shadow: none;
+	outline: none;
+}
+
+.li:hover {
+	background-color: #008040;
+	color: white;
+	font-weight: bold;
+	outline: none;
+}
+
+.li.active {
+	border: 0;
+	background-color: white;
+	color: #363942;
+	font-weight: bold;
+	outline: none;
+}
+.li:focus {
+	outline: none;
+	border: 0;
+}
+.li:visited {
+	border: 0;
+	outline: none;
+}
+
+.lii {
+	font-size: 20px;
+}
+
+.main {
+	margin-left: 220px;
+	min-height: 800px;
+	padding: 10px;
+}
+
+.main-header {
+	padding: 10px;
+	padding-top: 50px;
+	padding-bottom: 5px;
+	margin-bottom: 50px;
+	font-size: 30px;
+	border-bottom: 1px double #363942;
+	color: #363942;
+	font-weight: 500;
+}
+
+footer {
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: inherit;
+	background-color: #f2f7ff;
+	text-align: center;
+	margin-top: 20px;
+}

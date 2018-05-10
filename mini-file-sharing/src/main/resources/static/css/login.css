@@ -1,0 +1,114 @@
+.form {
+	max-width: 420px;
+	padding: 30px;
+	margin: 0 auto;
+	background: rgba(226, 233, 228, .9);
+	border: none;
+}
+
+.form-signin-heading {
+	text-align: center;
+	font-size: xx-large;
+	font-weight: bolder;
+	color: #3b3b3b;
+}
+
+.form-signup-heading {
+	text-align: center;
+	font-size: x-large;
+	color: #3b3b3b;
+}
+
+.form-control {
+	position: relative;
+	font-size: 16px;
+	height: auto;
+}
+
+input[type="text"] {
+	margin-bottom: 0px;
+	background-color: transparent;
+	border: 0px;
+	border-bottom: 1px solid;
+	box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+	border-radius: 0px;
+	font-size: large;
+}
+
+input[type="password"] {
+	margin-bottom: 10px !important;
+	background-color: transparent;
+	border: 0px;
+	border-bottom: 1px solid;
+	box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+	border-radius: 0px;
+	font-size: large;
+}
+
+.signup {
+	margin-top: 5px;
+	text-align: center;
+}
+
+.body {
+	background-image: url("/images/loginIM.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+    background-repeat:no-repeat;
+    background-size:100% 100vh;
+}
+
+.button-login {
+	background-color: #008040;
+	color: white;
+	border-radius: 0 !important;
+	font-weight: bolder !important;
+	margin-top: 10px;
+	
+}
+
+.button-login:hover {
+	background-color: white;
+	color: #008040 !important;
+}
+
+.button-signup {
+	background-color: white;
+	color: #616161;
+	border-radius: 0 !important;
+	font-weight: bolder !important;
+	margin-top: 10px;
+}
+
+.button-signup:hover {
+	color: #008040 !important;
+	border: 1px solid #008040;
+}
+
+.add-on {
+	border: 0 !important;
+	background-color: transparent !important;
+	font-size: x-large !important;
+	padding-bottom: 10px !important;
+}
+
+.logo {
+	float: left;
+	width: 200px;
+	margin-top: -45px;
+	margin-left: -30px;
+}
+
+.loginAnim {
+	animation: example 1.5s ease;
+}
+
+.msgFail {
+	color: red !important;
+	font-size: 12px;
+}
+@keyframes example {
+    0%   {margin-top: 250px; opacity: .2}
+    100% {margin-top: 150px; opacity: .9}
+}

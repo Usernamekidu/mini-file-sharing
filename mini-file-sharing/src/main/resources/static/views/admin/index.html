@@ -1,0 +1,176 @@
+
+<div class="m-h1 m-bluegray-text">User Management</div>
+<br>
+<br>
+
+<button ng-click="addBlock=true; editBlock=false" data-toggle="modal"
+	data-target="#addModal"
+	class="m-button m-blue1 m-blue-hover m-white-text m-margin-bottom">
+	<i class="glyphicon glyphicon-plus"></i> Add user
+</button>
+
+<table class="table m-table m-table-hover">
+	<thead>
+		<tr>
+			<th width="5%">#</th>
+			<th>Email</th>
+			<th width="15%">Name</th>
+			<th width="15%">Last Name</th>
+			<th width="10%">Rank</th>
+			<th width="25%">Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="u in users track by $index">
+			<td>{{$index+1}}</td>
+			<td>{{u.email}}</td>
+			<td>{{u.name}}</td>
+			<td>{{u.lastName}}</td>
+			<td>{{u.rankId.name}}</td>
+			<td>
+				<button ng-disabled="{{u.id == 0 }}" ng-click="getUser(u.id)"
+					type="button" data-toggle="modal" data-target="#editModal"
+					class="m-button m-button-circle m-green m-green-hover m-white-text">
+					<span style="color: white" class="glyphicon glyphicon-edit"></span>
+				</button>
+				<button ng-disabled="{{u.id == 0 }}" ng-click="deleteUser(u.id)"
+					type="button"
+					class="m-button m-button-circle m-red m-red-hover m-white-text"
+					onclick="myToast('del')">
+					<span style="color: white"
+						class="glyphicon glyphicon-glyphicon glyphicon-trash"></span>
+				</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div class="row">
+	<div class="col-md-5"></div>
+	<div class="col-md-5">
+		<div class="m-inline">
+			<div class="m-inline">
+				<button class="m-button m-green m-green-hover m-white-text"
+					ng-click="getUserByPage(page=page-1)" ng-disabled="page-1<0">Prev</button>
+			</div>
+			<div class="m-inline m-margin-left"
+				ng-repeat="i in getNumber(pageSum) track by $index">
+				<button ng-class="{'active': $index == selectedIndex }"
+					class="m-button m-green m-green-hover m-white-text"
+					ng-click="getUserByPage($index)">{{$index+1}}</button>
+			</div>
+			<div class="m-inline m-margin-left">
+				<button class="m-button m-green m-green-hover m-white-text"
+					ng-click="getUserByPage(page=page+1)" ng-disabled="page+1>=pageSum">Next</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="modal fade" id="editModal" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content m-modal-content">
+			<div class="modal-header m-modal-header-edit">
+				<button type="button" class="close m-close-button"
+					data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Edit User</h4>
+			</div>
+			<div class="modal-body">
+				<div ng-show="editBlock">
+					<form class="form-horizontal css-form" name="editForm"
+						ng-submit="editUser(user)">
+						<label>Email:</label> <input type="email"
+							class="form-control m-input" ng-model="user.email" required /> <label>Name:</label>
+						<input type="text" class="form-control" ng-model=user.name
+							required /> <label>Last Name:</label> <input type="text"
+							class="form-control" ng-model="user.lastName" required /> <label>Rank:</label>
+
+						<select class="form-control" ng-model="rank.current">
+							<option ng-repeat="name in rank.names" value="{{name.id}}">{{name.name}}</option>
+						</select>
+						
+						<label>Role:</label>
+						<div ng-repeat="role in roles track by $index">
+							<input id="{{role.role}}"  type="checkbox" ng-model="user.roleList[$index]" ng-checked="checkRole(role.id)" value="role.role">{{role.role}}
+						</div>
+						
+						
+						
+						<div class="modal-footer">
+							<button type="submit" ng-disabled="editForm.$invalid"
+								class="btn m-btn-edit" onclick="closeModal('edit')">Save
+								Change</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+<div class="modal fade" id="addModal" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content m-modal-content">
+			<div class="modal-header m-modal-header-add">
+				<button type="button" class="close m-close-button"
+					data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Add New User</h4>
+			</div>
+			<div class="modal-body">
+				<div ng-show="addBlock">
+					<form class="form-horizontal css-form" name="addForm"
+						ng-submit="addUser()">
+						<label>Email:</label> <input type="email" class="form-control"
+							ng-model="email" required /> <label>Password:</label> <input
+							type="text" class="form-control" ng-model="password" required />
+						<label>Name:</label> <input type="text" class="form-control"
+							ng-model=name required /> <label>Last Name:</label> <input
+							type="text" class="form-control" ng-model="lastName" required />
+						<div class="modal-footer">
+							<button type="submit" ng-disabled="addForm.$invalid"
+								class="btn m-btn-add" onclick="closeModal('add')">Add</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+<div id="textshow"></div>
+
+<script>
+	function closeModal(i) {
+		$('#editModal').modal('hide');
+		$('#addModal').modal('hide');
+		myToast(i);
+	}
+
+	function myToast(i) {
+		var a = document.getElementById("textshow");
+		if (i == "edit") {
+			a.innerHTML = "User information has been saved.";
+			a.style.backgroundColor = "#ec971f";
+		}
+		if (i == "add") {
+			a.innerHTML = "A new user has been created.";
+			a.style.backgroundColor = "#5bc0de";
+		}
+		if (i == "del") {
+			a.innerHTML = "A user has been deleted.";
+			a.style.backgroundColor = "#c9302c";
+		}
+		a.className = "show";
+		setTimeout(function() {
+			a.className = a.className.replace("show", "");
+		}, 3000);
+	}
+</script>

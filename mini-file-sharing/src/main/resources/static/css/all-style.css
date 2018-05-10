@@ -1,0 +1,416 @@
+button, a {
+	transition: .2s;
+}
+
+a {
+	color: #2196F3;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.body {
+	background-color: #ECEFF1;
+}
+
+.row {
+	margin-right: 0;
+}
+/* Button Area */
+
+
+
+.m-button {
+	background-color: #808080;
+	min-width: 40px;
+	height: 40px;
+	border: 0 solid transparent;
+	border-radius: 3px;
+}
+
+.m-button-small {
+	background-color: #808080;
+	min-width: 30px;
+	height: 30px;
+	border: 0 solid transparent;
+}
+
+.m-button-large {
+	background-color: #808080;
+	min-width: 40px;
+	height: 40px;
+	border: none;
+	text-align: center;
+}
+
+.m-button:hover, .m-button-large:hover {
+	cursor: pointer;
+	background-color: #fff;	
+}
+
+.m-button:hover, .m-button-large:hover {
+	cursor: pointer;
+	background-color: #fff;	
+}
+
+.m-button[disabled] {
+	opacity: 0.65;
+	cursor: not-allowed;
+}
+
+.m-button-circle {
+	border-radius: 50%;
+	width: 40px !important;
+	height: 40px !important;
+}
+
+/* Text Area */
+
+.m-white-text {
+	color: white !important;
+}
+
+.m-red-text {
+	color: #F44336 !important;
+}
+
+.m-blue-text {
+	color: #2196F3 !important;
+}
+
+.m-green-text {
+	color: #4CAF50 !important;
+}
+
+.m-orange-text {
+	color: #FFC107 !important;
+}
+
+.m-violet-text {
+	color: #673AB7 !important;
+}
+
+.m-teal-text {
+	color: #009688 !important;
+}
+
+.m-bluegray-text {
+	color: #607D8B !important;
+}
+
+/* Background Area */
+
+
+.m-red {	
+	background-color: #F44336 !important;
+}
+
+.m-red-hover:hover {
+	background-color: #B71C1C !important;
+}
+
+.m-red-border-color {
+	border-color: #F44336 !important;
+}
+
+.m-green {
+	background-color: #4CAF50 !important;
+}
+
+.m-green-hover:hover {
+	background-color: #1B5E20 !important;
+	color: white;
+}
+
+.m-green-hover.active {
+	background-color: #1B5E20 !important;
+	color: white;
+}
+
+.m-blue1 {
+	background-color: #9933ff !important;
+}
+
+.m-blue {
+	background-color: #2196F3 !important;
+}
+
+.m-blue-hover:hover {
+	background-color: #0D47A1 !important;
+	color: white;
+}
+
+.m-teal {
+	background-color: #009688 !important;
+}
+
+.m-teal-hover:hover {
+	background-color: #004D40 !important;
+}
+
+.m-orange {
+	background-color: #FFC107 !important;
+}
+
+.m-orange-hover:hover {
+	background-color: #FF6F00 !important;
+}
+
+.m-violet {
+	background-color: #673AB7 !important;
+}
+
+.m-violet-hover:hover {
+	background-color: #311B92 !important;
+}
+
+.m-pink {
+	background-color: #E91E63 !important;
+}
+
+.m-bluegray {
+	background-color: #607D8B !important;
+}
+
+/* Display Area */
+
+.m-inline {
+	display: inline-block;
+}
+
+.m-margin-left {
+	margin-left: 3px;
+}
+
+.m-margin-top {
+	margin-top: 3px;
+}
+
+.m-margin-bottom {
+	margin-bottom: 3px;
+}
+
+.m-text-align-left {
+	text-align: left !important;
+}
+
+.m-text-align-right {
+	text-align: right !important;
+}
+
+.m-text-align-center {
+	text-align: center !important;
+}
+
+.m-cursor-pointer {
+	cursor: pointer;
+}
+
+.m-overflow {
+	overflow: auto;
+	height: 400px;
+}
+
+.m-opacity-8 {
+	opacity: .8;
+}
+
+/* Table Area */
+
+.m-table-div-height {
+	height: 500px;
+	border: 1px dotted white;
+	margin-bottom: 5px;
+}
+
+.m-table {
+	
+}
+
+.m-table thead {
+	background-color: #9933ff;
+	color: white;
+	width: 100%;	
+}
+
+.m-table th, .m-table td {
+	text-align: center;
+}
+
+.m-table tbody tr:nth-child(odd) {
+	background-color: white !important;
+}
+.m-table tbody tr:nth-child(even) {
+	background-color: #9999FF !important;
+}
+
+.m-table thead a {
+	color: white !important;	
+}
+
+.m-table-hover tbody tr:hover {
+	/* background-color: #75eeff!important; */
+	font-weight: bolder;	
+}
+
+/* Vertical Navigation Bar Area */
+
+.m-vnar-bar {
+	background-color: white;
+	padding-bottom: 800px;
+	width: 100%;
+}
+
+.m-vnar-bar-title {
+	text-align: center !important;
+	font-size: 18px !important;
+	background-color: #9933ff !important;
+	color: white !important;
+}
+
+.m-vnar-bar-fa-avatar {
+	font-size: 70px;
+	color: black;
+	text-align: center;
+	margin: 30px 0;
+}
+
+.m-vnar-bar button {
+	background-color: inherit;
+	color: black;
+	border: 0 solid transparent;
+	width: 100%;
+	font-size: 15px;
+	text-align: left;
+	padding: 5px;
+}
+
+.m-vnar-bar button i {
+	font-size: 20px;
+}
+
+.m-vnar-bar button:hover {
+	background-color: #808080;
+	color: white;
+}
+
+.m-vnar-bar button.active {
+	background-color: white;
+	color: #009688;
+	border: 0 solid transparent;
+	outline: none;
+}
+
+/* Card Area */
+
+.m-card {
+	width: 100%;	
+	box-shadow: 1px 1px 1px #8c8c8c;
+	margin-bottom: 5px;
+}
+
+.m-card table {
+	width: 100%;
+}
+
+.m-card-body {
+	background-color: white;
+	margin: auto;
+	padding: 10px;
+}
+
+.m-card-info {
+	vertical-align: top;
+	text-align: right !important;
+}
+
+.m-card .t1 {
+	font-size: 40px;
+	font-weight: 700;
+}
+
+.m-card .t2 {
+	font-size: 22px;
+	font-weight: 600;
+}
+
+.m-card .t3 {
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.m-card .t4 {
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.m-card-body i {
+	font-size: 80px;
+	text-align: center;
+	padding: 10px;
+}
+
+.m-card-body i.sm {
+	font-size: 30px !important;
+	padding: 5px;
+}
+
+
+.m-card footer {
+	margin-top: 0px;
+	cursor: pointer;
+	text-align: left;
+	padding: 5px 15px;
+}
+
+.m-card-sm table {
+	width: 100%;
+}
+
+/* Page Header */
+
+.m-h1 {
+	font-size: 50px;
+	padding-top: 50px;
+	border-bottom: 2px solid #607D8B;
+}
+
+.m-h2 {
+	font-size: 30px;
+	padding-top: 50px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #607D8B;
+}
+
+/* Toast Area */
+
+#m-toast-blue {
+	visibility: hidden;
+	min-width: 250px;
+	background-color: #2196F3;
+	color: white;
+	text-align: center;
+	padding: 30px;
+	position: fixed;
+	z-index: 1500;
+	top: 30px;
+	right: 30px;
+}
+
+#m-toast-blue.show {
+	visibility: visible;
+	animation: fadein 1s, fadeout 0.5s 2.5s;
+}
+
+/* Animation Area */
+
+@keyframes fadein {
+	from {top: 10px; opacity: 0;}
+ 	to {top: 30px; opacity: .8;}
+}
+
+@keyframes fadeout {
+	from {top: 30px; opacity: .8;}
+	to { top: 10px; opacity: 0;}
+}

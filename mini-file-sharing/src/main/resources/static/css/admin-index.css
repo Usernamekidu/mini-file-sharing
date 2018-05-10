@@ -1,0 +1,132 @@
+.m-btn {
+	background-color: transparent;
+	border-radius: 0;
+	margin-left: -5px;
+}
+
+.m-btn.active {
+	background-color: #008040;
+	color: white;
+}
+
+.btn-circle {
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+}
+
+.btn-add {
+	width: 75px;
+	height: 75px;
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	border-radius: 50%;
+	font-size: 35px;
+	vertical-align: middle;
+	text-align: center;
+	font-weight: 900;
+	z-index: 1000;
+	animation-iteration-count: infinite;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	animation-name: bounce;
+}
+
+.modal-dialog {
+	margin: 150px auto;
+}m
+
+.m-modal-content {
+	border-radius: 0;
+}
+
+.m-modal-header-edit {
+	background-color: #9933ff;
+	color: white;
+}
+
+.m-modal-header-add {
+	background-color: #9933ff;
+	color: white;
+}
+
+.m-close-button {
+	color: white;
+	opacity: 1;
+}
+
+.m-btn-add {
+	border-radius: 0;
+	background-color: #9933ff;
+	color: white;
+	
+}
+
+.m-btn-add:hover {
+	background-color: #2187a5;
+	color: white;
+}
+
+.m-btn-edit {
+	border-radius: 0;
+	background-color: #9933ff;
+	color: white;
+}
+
+.m-btn-edit:hover {
+	background-color: #a8670f;
+	color: white;
+}
+
+label {
+	margin-top: 15px;
+}
+
+thead {
+	background-color: #008040;
+	color: white;
+	
+}
+
+.list-inline {
+	margin: 0 auto;
+	text-align: center !important;
+}
+
+#textshow {
+   visibility: hidden;
+   min-width: 250px;
+   margin-left: -125px;
+   color: white;
+   text-align: center;
+   padding: 20px;
+   position: fixed;
+   z-index: 1;
+   right: 30px;
+   top: 30px;
+   font-size: 17px;
+   font-weight: 500;
+   opacity: .6;
+}
+
+#textshow.show {
+   visibility: visible;
+   animation: fadein 1s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {top: 10px; opacity: 0;}
+    to {top: 30px; opacity: .6;}
+}
+
+@keyframes fadeout {
+    from {top: 30px; opacity: .6;}
+    to {top: 10px; opacity: 0;}
+}
+
+@keyframes bounce { 
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-30px);} 
+    60% {transform: translateY(-15px);} 
+}
