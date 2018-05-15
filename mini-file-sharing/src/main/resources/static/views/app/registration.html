@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Registration Form</title>
+<link rel="stylesheet" href="css\registration.css" />
+<link rel="stylesheet"
+	href="/css/bootstrap.min.css">
+<script
+	src="/js/lib/jquery/jquery.min.js"></script>
+<script
+	src="/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="/css/font-awesome.min.css">
+
+</head>
+<body onload="myToast()" class="body">
+	<div id="con" class="container regAnim">
+		<div class="form">
+			<h1 style="text-align: center">Registration</h1>
+			<br />
+			<p style="text-align: center">
+				I have an account! </span>
+				<a href="/login">Login</a>
+			</p>
+			<br>
+
+			<form autocomplete="off" action="#" th:action="@{/registration}"
+				th:object="${user}" method="post" role="form">
+				<div class="input-group">
+					<span class="input-group-addon add-on"> <i
+						class="glyphicon glyphicon-pencil"></i>
+					</span> <input type="text" class="form-control" th:field="*{name}"
+						placeholder="Display Name">
+				</div>
+				<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+					class="validation-message lbl"></div>
+				<br />
+
+
+				<div class="input-group">
+					<span class="input-group-addon add-on"> <i
+						class="glyphicon glyphicon-user"></i>
+					</span> <input type="text" class="form-control" th:field="*{lastName}"
+						placeholder="Last Name">
+				</div>
+				<div th:if="${#fields.hasErrors('lastName')}"
+					th:errors="*{lastName}" class="validation-message lbl"></div>
+				<br />
+
+
+				<div class="input-group">
+					<span class="input-group-addon add-on"> <i
+						class="glyphicon glyphicon-envelope"></i>
+					</span> <input type="text" class="form-control" th:field="*{email}"
+						placeholder="Email">
+				</div>
+				<div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+					class="validation-message lbl"></div>
+				<br />
+
+
+				<div class="input-group">
+					<span class="input-group-addon add-on"> <i
+						class="glyphicon glyphicon-lock"></i>
+					</span> <input type="password" class="form-control" th:field="*{password}"
+						placeholder="Password">
+				</div>
+				<div th:if="${#fields.hasErrors('password')}"
+					th:errors="*{password}" class="validation-message lbl"></div>
+				<br />
+				<input type="submit" class="btn btn-lg button-create btn-block"
+					value="Create Account"> 
+				<span id="textshow" th:utext="${message}"></span>
+
+
+			</form>
+		</div>
+
+
+	</div>
+
+	<script>
+		function myToast() {
+			var a = document.getElementById("textshow");
+			var b= $("#con");
+			if (a.textContent != "") {
+				if (a.textContent == "User has been registered fail.") {
+					a.style.backgroundColor = "#ffb3b3";
+					a.style.borderLeftColor = "#ff1a1a";
+					
+				}
+				b.removeClass("regAnim");
+				a.className = "show";
+				setTimeout(function() {
+					a.className = a.className.replace("show", "");
+				}, 3000);
+			}
+		}
+	</script>
+</body>
+</html>

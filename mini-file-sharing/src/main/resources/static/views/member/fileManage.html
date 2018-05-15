@@ -1,0 +1,137 @@
+<!-- <div class="main-header">File Management</div> -->
+<h3>
+	<i class="fa fa-angle-right"></i> File Management
+</h3>
+<!-- class="content-panel table table-striped table-advance table-hover" -->
+<div ng-init="stt=0; incre=1">
+	<div class="table-height">
+		<table id="myTable" class="table m-table">
+			<thead class="thead-custom">
+				<th width="5%">#</th>
+				<th width="40%">Name</th>
+				<th width="10%">Size</th>
+				<th width="15%">Date Upload</th>
+				<th width="10%">Sharing</th>
+				<th width="20%"">Action</th>
+			</thead>
+			<tbody ng-repeat="file in files.content | filter: filter_">
+				<td>{{$index+1}}</td>
+				<td><a href="" ng-click="getInfoFile(file.id)">{{file.name}}</a></td>
+				<td>{{file.size | sizeFormat}}</td>
+				<td>{{file.dateupload | date:"dd-MM-yyyy"}}</td>
+				<td><input ng-click="changeShare(file.id)" type="checkbox"
+					ng-checked="{{file.sharing==1}}"></td>
+				<td>
+					<button ng-click="downloadFile(file.id)" type="button"
+						class="m-button m-orange m-button-circle m-orange-hover m-white-text">
+						<span class="fa fa-download"></span>
+					</button>
+					<button ng-click="deleteFile(file.id)" type="button"
+						class="m-button m-red m-button-circle m-red-hover m-white-text">
+						<span class="fa fa-trash"></span>
+					</button>
+					<button ng-click="getInfoFile(file.id)" type="button"
+						class="m-button m-green m-button-circle m-green-hover m-white-text">
+						<span class="fa fa-info"></span>
+					</button>
+				</td>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="row m-text-align-center">
+		<div class="m-inline">
+			<button class="m-button m-green m-green-hover m-white-text"
+				ng-click="getFileByPage(page=page-1)" ng-disabled="page-1<0">Prev</button>
+		</div>
+		<div class="m-inline m-margin-left"
+			ng-repeat="i in getNumber(files.totalPages) track by $index">
+			<button ng-class="{'active': $index == selectedIndex }"
+				class="m-button m-green m-green-hover m-white-text"
+				ng-click="getFileByPage($index)">{{$index+1}}</button>
+		</div>
+		<div class="m-inline m-margin-left">
+			<button class="m-button m-green m-green-hover m-white-text"
+				ng-click="getFileByPage(page=page+1)"
+				ng-disabled="page+1>=files.totalPages">Next</button>
+		</div>
+	</div>
+
+	<!-- modal -->
+	<div class="modal fade" id="editModal" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content m-modal-content">
+				<div class="modal-header m-modal-header-edit">
+					<button type="button" class="close m-close-button"
+						data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">{{fileDetail.name | uppercase}}'s
+						Detail</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-7">
+							<div id="article_table">
+								<table class="table table-bordered table-striped m-table">
+									<tr>
+										<td width="50%">Name</td>
+										<td>{{fileDetail.name}}</td>
+									</tr>
+									<tr>
+										<td>Size</td>
+										<td>{{fileDetail.size | number:2}} Kb</td>
+									</tr>
+									<tr>
+										<td>Date upload</td>
+										<td>{{fileDetail.dateupload | date:"dd-MM-yyyy"}}</td>
+									</tr>
+									<tr>
+										<td>Total download</td>
+										<td>{{total}}</td>
+									</tr>
+								</table>
+								<h4>Description:</h4>
+								<textarea ng-model="description_" class="form-control textarea"
+									rows="7">{{fileDetail.description}}</textarea>
+								<div class="btn-save">
+									<button class="btn btn-info btn-block"
+										ng-click="saveChange(fileDetail.id)">Save Change</button>
+								</div>
+							</div>
+							<p>{{msgSave}}</p>
+						</div>
+						<div class="col-md-5">
+							<h4>Comment</h4>
+
+							<form ng-submit="saveComment(fileDetail.id)">
+								<textarea ng-model="content" class="form-control textarea1"
+									rows="2"></textarea>
+								<div class="btn-save">
+									<button class="btn btn-info btn-block" type="submit">Send</button>
+								</div>
+							</form>
+							<div class="table-overflow">
+								<table class="table table-bordered table-striped">
+									<tr ng-repeat="comment in comments.content">
+										<td>
+											<article>
+												<header>
+													<a href="">{{comment.idUser.name}}:</a>
+												</header>
+												<section>{{comment.content}}</section>
+												<footer>
+													Date: {{comment.dateComment}}
+												</footer>
+											</article>
+										</td>
+									</tr>
+								</table>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

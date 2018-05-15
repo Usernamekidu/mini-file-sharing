@@ -1,0 +1,99 @@
+.m-btn {
+	background-color: transparent;
+	border-radius: 0;
+	margin-left: -5px;
+}
+
+.m-btn.active {
+	background-color: #008040;
+	color: white;
+}
+
+.btn-circle {
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+}
+
+.btn-add {
+	margin-bottom: 20px;
+	border-radius: 0;
+}
+
+.m-modal-content {
+	border-radius: 0;
+}
+
+.m-modal-header-edit {
+	background-color: #ec971f;
+	color: white;
+}
+
+.m-modal-header-add {
+	background-color: #5bc0de;
+	color: white;
+}
+
+.m-close-button {
+	color: white;
+	opacity: 1;
+}
+
+.m-btn-add {
+	margin-top: 20px;
+	border-radius: 0;
+	background-color: #5bc0de;
+	color: white;
+}
+
+.m-btn-add:hover {
+	background-color: #2187a5;
+	color: white;
+}
+
+.m-btn-edit {
+	margin-top: 20px;
+	border-radius: 0;
+	background-color: #ec971f;
+	color: white;
+}
+
+.m-btn-edit:hover {
+	background-color: #a8670f;
+	color: white;
+}
+
+label {
+	margin-top: 15px;
+}
+
+#textshow {
+   visibility: hidden;
+   min-width: 250px;
+   margin-left: -125px;
+   color: white;
+   text-align: center;
+   padding: 20px;
+   position: fixed;
+   z-index: 1;
+   right: 30px;
+   top: 30px;
+   font-size: 17px;
+   font-weight: 500;
+   opacity: .6;
+}
+
+#textshow.show {
+   visibility: visible;
+   animation: fadein 1s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {top: 10px; opacity: 0;}
+    to {top: 30px; opacity: .6;}
+}
+
+@keyframes fadeout {
+    from {top: 30px; opacity: .6;}
+    to {top: 10px; opacity: 0;}
+}

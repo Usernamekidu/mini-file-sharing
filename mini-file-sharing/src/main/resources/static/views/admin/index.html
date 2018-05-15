@@ -5,7 +5,7 @@
 
 <button ng-click="addBlock=true; editBlock=false" data-toggle="modal"
 	data-target="#addModal"
-	class="m-button m-blue1 m-blue-hover m-white-text m-margin-bottom">
+	class="m-button m-blue m-blue-hover m-white-text m-margin-bottom">
 	<i class="glyphicon glyphicon-plus"></i> Add user
 </button>
 
@@ -28,6 +28,7 @@
 			<td>{{u.lastName}}</td>
 			<td>{{u.rankId.name}}</td>
 			<td>
+
 				<button ng-disabled="{{u.id == 0 }}" ng-click="getUser(u.id)"
 					type="button" data-toggle="modal" data-target="#editModal"
 					class="m-button m-button-circle m-green m-green-hover m-white-text">
@@ -66,8 +67,12 @@
 	</div>
 </div>
 
+
+
+
 <div class="modal fade" id="editModal" role="dialog">
 	<div class="modal-dialog">
+
 		<!-- Modal content-->
 		<div class="modal-content m-modal-content">
 			<div class="modal-header m-modal-header-edit">

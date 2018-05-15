@@ -1,0 +1,69 @@
+<div class="m-h1 m-bluegray-text">File Management</div>
+<br>
+<br>
+
+<table class="table m-table m-table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th width="30%">Name</th>
+			<th>Dateupload</th>
+			<th>User</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="file in files track by $index">
+			<td>{{$index+1}}</td>
+			<td>{{file.name}}</td>
+			<td>{{file.dateupload | date:'MM/dd/yyyy'}}</td>
+			<td>{{file.userId.name}}</td>
+			<td>
+				<button ng-click="deleteFile(f[0])" type="button"
+					class="m-button m-button-circle m-red m-red-hover m-white-text"
+					onclick="myToast('del')">
+					<span style="color: white"
+						class="glyphicon glyphicon-glyphicon glyphicon-trash"></span>
+				</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div class="row">
+	<div class="col-md-5"></div>
+	<div class="col-md-5">
+		<div class="m-inline">
+			<div class="m-inline">
+				<button class="m-button m-green m-green-hover m-white-text"
+					ng-click="getFileByPage(page=page-1)" ng-disabled="page-1<0">Prev</button>
+			</div>
+			<div class="m-inline m-margin-left"
+				ng-repeat="i in getNumber(pageSum) track by $index">
+				<button ng-class="{'active': $index == selectedIndex }"
+					class="m-button m-green m-green-hover m-white-text"
+					ng-click="getFileByPage($index)">{{$index+1}}</button>
+			</div>
+			<div class="m-inline m-margin-left">
+				<button class="m-button m-green m-green-hover m-white-text"
+					ng-click="getFileByPage(page=page+1)"
+					ng-disabled="page+1>=pageSum">Next</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="textshow"></div>
+
+<script>
+	var a = document.getElementById("textshow");
+	function myToast(i) {
+		if (i == "del") {
+			a.innerHTML = "A file has been deleted.";
+			a.style.backgroundColor = "#c9302c";
+		}
+		a.className = "show";
+		setTimeout(function() {
+			a.className = a.className.replace("show", "");
+		}, 3000);
+	}
+</script>

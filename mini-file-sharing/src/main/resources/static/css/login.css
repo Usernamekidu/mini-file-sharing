@@ -51,7 +51,7 @@ input[type="password"] {
 }
 
 .body {
-	background-image: url("/images/loginIM.png");
+	background-image: url("/images/background_home.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
@@ -60,7 +60,7 @@ input[type="password"] {
 }
 
 .button-login {
-	background-color: #008040;
+	background-color: #00CDCD;
 	color: white;
 	border-radius: 0 !important;
 	font-weight: bolder !important;
@@ -69,21 +69,21 @@ input[type="password"] {
 }
 
 .button-login:hover {
-	background-color: white;
-	color: #008040 !important;
+	color: #008B8B !important;
+	border: 1px solid #008B8B;
 }
 
 .button-signup {
-	background-color: white;
-	color: #616161;
+	background-color: #00CDCD;
+	color: white;
 	border-radius: 0 !important;
 	font-weight: bolder !important;
 	margin-top: 10px;
 }
 
 .button-signup:hover {
-	color: #008040 !important;
-	border: 1px solid #008040;
+	color: #008B8B !important;
+	border: 1px solid #008B8B;
 }
 
 .add-on {

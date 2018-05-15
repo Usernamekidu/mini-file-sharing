@@ -1,6 +1,11 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
 <html lang="en" ng-app="admin" class="no-js"
 	xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +28,7 @@
 	<div class="row">
 		<div class="col-sm-2">
 			<div class="m-vnar-bar">
-				<a href="#"><button class="m-vnar-bar-title">Administrator</button></a>
+				<a href="#/dashboard"><button class="m-vnar-bar-title">Administrator</button></a>
 				<div class="m-vnar-bar-fa-avatar">
 					<i class="fa fa-users"></i>
 				</div>
@@ -31,12 +36,20 @@
 					<button id="id01" onclick="function1('#id01')" class="">
 						<span class=""> <i class="fa fa-dashboard" aria-hidden="true"></i>
 						</span> Dashboard
-					</button> <a href="#/admin" class="">
+					</button>
+					<a href="#/admin" class="">
 						<button id="id01" onclick="function1('#id01')" class="">
 							<span class=""> <i class="fa fa-user" aria-hidden="true"></i>
 							</span> User Management
 						</button>
-					<a href="#/user">
+				</a>
+					<a href="#/file">
+						<button id="id03" onclick="function1('#id03')" class="">
+							<span class=""> <i class="fa fa-list-ol"
+								aria-hidden="true"></i>
+							</span> File Management
+						</button>
+				</a> <a href="#/user">
 						<button id="id03" onclick="function1('#id03')" class="">
 							<span class=""> <i class="fa fa-cogs"
 								aria-hidden="true"></i>

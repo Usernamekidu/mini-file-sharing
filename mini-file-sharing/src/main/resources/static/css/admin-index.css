@@ -35,19 +35,19 @@
 
 .modal-dialog {
 	margin: 150px auto;
-}m
+}
 
 .m-modal-content {
 	border-radius: 0;
 }
 
 .m-modal-header-edit {
-	background-color: #9933ff;
+	background-color: #ec971f;
 	color: white;
 }
 
 .m-modal-header-add {
-	background-color: #9933ff;
+	background-color: #5bc0de;
 	color: white;
 }
 
@@ -58,7 +58,7 @@
 
 .m-btn-add {
 	border-radius: 0;
-	background-color: #9933ff;
+	background-color: #5bc0de;
 	color: white;
 	
 }
@@ -70,7 +70,7 @@
 
 .m-btn-edit {
 	border-radius: 0;
-	background-color: #9933ff;
+	background-color: #ec971f;
 	color: white;
 }
 
